@@ -52,4 +52,14 @@ config MQTT_CLEAN_SESSION
 	  the client. Setting this flag to 0 allows the client to create a
 	  persistent session.
 
+config MQTT_SHELL
+	bool "MQTT shell utilities"
+	help
+	  Activate shell module that provides MQTT commands to the console
+
+config MQTT_MESSAGE_BUFFER_SIZE
+	int "MQTT buffer size"
+	depends on MQTT_SHELL
+	default 256
+
 endif # MQTT_LIB
